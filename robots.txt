@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://caprichosostudio.com/sitemap.xml
