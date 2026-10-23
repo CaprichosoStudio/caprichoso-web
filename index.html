@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=5">
+<link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -43,7 +43,7 @@
       <svg class="ic-on" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/></svg>
       <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
     </button>
-    <a class="btn btn--red" href="https://calendly.com/hola-caprichosostudio/30min" target="_blank" rel="noopener">Reservar llamada <span class="sq" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><path d="M3 9 9 3M4 3h5v5"/></svg></span></a>
+    <a class="btn btn--red" href="https://calendly.com/hola-caprichosostudio/30min" target="_blank" rel="noopener" data-book>Reservar llamada <span class="sq" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><path d="M3 9 9 3M4 3h5v5"/></svg></span></a>
   </div>
 </header>
 
@@ -60,7 +60,7 @@
       </h1>
       <div class="hero__side">
         <p class="paren">(Un estudio creativo que sale de noche)</p>
-        <a class="btn btn--red btn--big" href="https://calendly.com/hola-caprichosostudio/30min" target="_blank" rel="noopener">Reservar llamada <span class="sq" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><path d="M3 9 9 3M4 3h5v5"/></svg></span></a>
+        <a class="btn btn--red btn--big" href="https://calendly.com/hola-caprichosostudio/30min" target="_blank" rel="noopener" data-book>Reservar llamada <span class="sq" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><path d="M3 9 9 3M4 3h5v5"/></svg></span></a>
       </div>
     </div>
   </section>
@@ -220,7 +220,7 @@
     <div>
       <h2 class="statement">Tres plazas. Hasta el 31 de enero.</h2>
       <p class="body">Buscamos las tres primeras salas con las que construir nuestro trabajo en nightlife. Tienen condiciones de fundador en cualquier formato y trato directo con los dos socios. A cambio, contamos juntos el caso.</p>
-      <a class="btn btn--ink" href="#contacto">Reservar mi plaza <span class="sq" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><path d="M3 9 9 3M4 3h5v5"/></svg></span></a>
+      <a class="btn btn--ink" href="https://calendly.com/hola-caprichosostudio/30min" target="_blank" rel="noopener" data-book>Reservar mi plaza <span class="sq" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><path d="M3 9 9 3M4 3h5v5"/></svg></span></a>
     </div>
   </section>
 
@@ -245,7 +245,7 @@
       <span>que vienen.</span>
     </h2>
     <div class="row">
-      <a class="btn btn--red btn--big" href="https://calendly.com/hola-caprichosostudio/30min" target="_blank" rel="noopener">Reservar llamada de 20 min <span class="sq" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><path d="M3 9 9 3M4 3h5v5"/></svg></span></a>
+      <a class="btn btn--red btn--big" href="https://calendly.com/hola-caprichosostudio/30min" target="_blank" rel="noopener" data-book>Reservar llamada de 20 min <span class="sq" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><path d="M3 9 9 3M4 3h5v5"/></svg></span></a>
       <a class="btn" href="mailto:hola@caprichosostudio.com">hola@caprichosostudio.com <span class="sq" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><path d="M3 9 9 3M4 3h5v5"/></svg></span></a>
       <a class="btn" href="https://ig.me/m/caprichosostudio" target="_blank" rel="noopener">@caprichosostudio <span class="sq" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><path d="M3 9 9 3M4 3h5v5"/></svg></span></a>
     </div>
@@ -264,8 +264,25 @@
 </main>
 
 
+<dialog class="book" data-book-dialog aria-labelledby="book-title">
+  <div class="book__head">
+    <div>
+      <p class="mono dim">(Llamada de 20 minutos)</p>
+      <h2 id="book-title" class="h3">Elige día y hora</h2>
+    </div>
+    <button class="book__close" type="button" data-book-close aria-label="Cerrar"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M2 2l10 10M12 2 2 12"/></svg></button>
+  </div>
+  <div class="book__cal" data-cal="https://calendly.com/hola-caprichosostudio/30min?embed_domain=caprichosostudio.com&amp;embed_type=Inline&amp;hide_gdpr_banner=1&amp;background_color=222222&amp;text_color=ffffe9&amp;primary_color=c10000">
+    <div class="book__empty">
+      <p class="h3">Cargando el calendario…</p>
+      <p class="dim">Si no aparece, <a href="https://calendly.com/hola-caprichosostudio/30min" target="_blank" rel="noopener">ábrelo en otra pestaña</a>.</p>
+    </div>
+  </div>
+  <p class="book__alt mono">¿Prefieres escribir? <a href="mailto:hola@caprichosostudio.com?subject=Quiero%20una%20llamada">hola@caprichosostudio.com</a> · <a href="https://ig.me/m/caprichosostudio" target="_blank" rel="noopener">Instagram</a></p>
+</dialog>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
-<script src="main.js?v=3" defer></script>
+<script src="main.js?v=6" defer></script>
 <script src="hero3d.js?v=3" defer></script>
 </body>
 </html>
