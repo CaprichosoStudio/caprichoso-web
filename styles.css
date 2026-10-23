@@ -254,6 +254,22 @@ svg { display: block; }
 .foot .legal { display: flex; justify-content: space-between; gap: 16px; padding-block: 22px 28px; opacity: .55; flex-wrap: wrap; }
 @media (max-width: 860px) { .foot .cols { grid-template-columns: 1fr 1fr; } }
 
+/* reserva: Calendly dentro de la web */
+.book { width: min(760px, calc(100% - 32px)); height: min(820px, calc(100dvh - 32px)); max-height: none; max-width: none; padding: 0; border: 0; border-radius: 18px; overflow: hidden; background: var(--ink); color: var(--cream); box-shadow: inset 0 1px 0 rgba(255,255,255,.12), 0 40px 120px rgba(0,0,0,.6); flex-direction: column; }
+.book[open] { display: flex; animation: pop .35s var(--ease); }
+.book::backdrop { background: rgba(10,10,10,.6); -webkit-backdrop-filter: blur(14px) saturate(1.4); backdrop-filter: blur(14px) saturate(1.4); }
+@keyframes pop { from { opacity: 0; transform: translateY(14px) scale(.98); } }
+.book__head { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 18px 18px 16px 24px; border-bottom: 1px dashed rgba(255,255,233,.22); }
+.book__head .h3 { margin-top: 6px; }
+.book__close { width: 40px; height: 40px; flex: none; display: grid; place-items: center; border-radius: 12px; background: rgba(127,127,110,.18); transition: background .25s var(--ease), transform .35s var(--ease); }
+.book__close:hover { background: var(--red); transform: rotate(90deg); }
+.book__cal { flex: 1; position: relative; background: var(--ink); }
+.book__cal iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; color-scheme: light; }
+.book__empty { position: absolute; inset: 0; display: grid; place-content: center; gap: 10px; padding: 32px; text-align: center; }
+.book__empty a, .book__alt a { text-decoration: underline; text-underline-offset: 3px; }
+.book__alt { padding: 14px 24px; border-top: 1px dashed rgba(255,255,233,.22); opacity: .7; text-transform: none; }
+@media (max-width: 860px) { .book { width: 100%; height: 100dvh; margin: 0; border-radius: 0; } }
+
 /* aparición al hacer scroll */
 .rv { opacity: 0; transform: translateY(26px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
 .rv.in { opacity: 1; transform: none; }

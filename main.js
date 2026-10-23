@@ -85,3 +85,25 @@ tick(); setInterval(tick, 20000);
   });
   render();
 })();
+
+// Reserva: los botones abren Calendly en una ventana dentro de la web; el enlace queda como respaldo
+(() => {
+  const dialog = document.querySelector('[data-book-dialog]');
+  if (!dialog || typeof dialog.showModal !== 'function') return;
+  const cal = dialog.querySelector('[data-cal]');
+  let loaded = false;
+  const open = (e) => {
+    e.preventDefault();
+    if (!loaded) {
+      const f = document.createElement('iframe');
+      f.src = cal.dataset.cal; f.title = 'Calendario de reservas'; f.loading = 'eager';
+      cal.append(f); loaded = true;
+    }
+    dialog.showModal();
+  };
+  document.querySelectorAll('[data-book]').forEach((b) => b.addEventListener('click', open));
+  dialog.querySelector('[data-book-close]').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });
+  const pre = () => { const l = document.createElement('link'); l.rel = 'preconnect'; l.href = 'https://calendly.com'; document.head.append(l); };
+  document.querySelector('[data-book]')?.addEventListener('pointerenter', pre, { once: true });
+})();
