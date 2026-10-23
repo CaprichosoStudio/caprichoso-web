@@ -2,9 +2,9 @@
 
 Web de Caprichoso Studio. HTML, CSS y JS estáticos, sin paso de build.
 
-- `index.html`, `styles.css`, `main.js`: la página.
+- `index.html`, `styles.css`, `main.js`: la página (incluye el sonido al pasar el ratón, apagado por defecto).(incluye el sonido al pasar el ratón, apagado por defecto).
 - `hero3d.js`: el hero (cristal líquido con láseres, Three.js r128 desde cdnjs).
-- Las reservas abren el Calendly `hola-caprichosostudio/30min` dentro de una ventana.
+- Las reservas abren el Calendly `hola-caprichosostudio/30min` en otra pestaña.
 
 ## Publicar
 
