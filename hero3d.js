@@ -6,7 +6,7 @@
   const THREE = window.THREE;
   if (!section || !THREE) return;
   const canvas = section.querySelector('canvas');
-  const d = document.querySelector('.nav__logo path')?.getAttribute('d');
+  const d = document.querySelector('#firma path')?.getAttribute('d');
   if (!canvas || !d) return;
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
