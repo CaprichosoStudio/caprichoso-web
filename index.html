@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=6">
+<link rel="stylesheet" href="styles.css?v=10">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -32,6 +32,7 @@
   <a class="logo" href="#top" aria-label="Caprichoso Studio, inicio"><svg viewBox="0 0 1134 413"><use href="#firma"/></svg></a>
   <ul>
     <li><a href="#estudio">Estudio</a></li>
+    <li><a href="trabajos">Trabajos</a></li>
     <li><a href="#servicios">Servicios</a></li>
     <li><a href="#formatos">Formatos</a></li>
     <li><a href="#proceso">Proceso</a></li>
@@ -65,12 +66,13 @@
     </div>
   </section>
 
-  <div class="ticker night mono" aria-hidden="true">
-    <div class="track">
-      <span><b>Clubs</b><b>Salas</b><b>Promotoras</b><b>Festivales</b><b>Aperturas</b><b>Temporadas</b><b>Branding</b><b>Content</b><b>Strategy</b></span>
-      <span><b>Clubs</b><b>Salas</b><b>Promotoras</b><b>Festivales</b><b>Aperturas</b><b>Temporadas</b><b>Branding</b><b>Content</b><b>Strategy</b></span>
+  <!-- CLIENTES: logos en bucle sobre rojo -->
+  <section class="clients" aria-label="Clientes con los que hemos trabajado" data-theme="night">
+    <div class="clients__track">
+      <ul class="clients__set"><li><img class="cl-pnlau" src="img/clientes/pnlau.webp" width="546" height="140" alt="PNLAU" decoding="async"></li><li><img class="cl-pecado" src="img/clientes/pecado.webp" width="451" height="140" alt="Pecado Pub" decoding="async"></li><li><img class="cl-bakkanito" src="img/clientes/bakkanito.webp" width="409" height="140" alt="Bakkanito" decoding="async"></li><li><img class="cl-ku-bcn" src="img/clientes/ku-bcn.webp" width="290" height="140" alt="KU Barcelona" decoding="async"></li><li><img class="cl-santana" src="img/clientes/santana.webp" width="475" height="140" alt="Santana Club" decoding="async"></li></ul>
+      <ul class="clients__set" aria-hidden="true"><li><img class="cl-pnlau" src="img/clientes/pnlau.webp" width="546" height="140" alt="" decoding="async"></li><li><img class="cl-pecado" src="img/clientes/pecado.webp" width="451" height="140" alt="" decoding="async"></li><li><img class="cl-bakkanito" src="img/clientes/bakkanito.webp" width="409" height="140" alt="" decoding="async"></li><li><img class="cl-ku-bcn" src="img/clientes/ku-bcn.webp" width="290" height="140" alt="" decoding="async"></li><li><img class="cl-santana" src="img/clientes/santana.webp" width="475" height="140" alt="" decoding="async"></li></ul>
     </div>
-  </div>
+  </section>
 
   <!-- MANIFIESTO -->
   <section class="manifesto day wrap" id="estudio" data-theme="day">
@@ -253,7 +255,7 @@
 
   <footer class="foot night wrap" data-theme="night">
     <div class="cols">
-      <div><span class="mono">Índice</span><a href="#estudio">Estudio</a><a href="#servicios">Servicios</a><a href="#formatos">Formatos</a><a href="#proceso">Proceso</a></div>
+      <div><span class="mono">Índice</span><a href="#estudio">Estudio</a><a href="trabajos">Trabajos</a><a href="#servicios">Servicios</a><a href="#formatos">Formatos</a><a href="#proceso">Proceso</a></div>
       <div><span class="mono">Contacto</span><a href="mailto:hola@caprichosostudio.com">hola@caprichosostudio.com</a><a href="https://instagram.com/caprichosostudio" target="_blank" rel="noopener">@caprichosostudio</a></div>
       <div><span class="mono">Dónde</span><p>Toda España</p><p class="dim">En remoto + colaboradores locales</p></div>
       <div><span class="mono">Ahora mismo</span><p id="status">—</p><a href="#top">Volver arriba ↑︎</a></div>
@@ -282,7 +284,7 @@
 </dialog>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
-<script src="main.js?v=6" defer></script>
+<script src="main.js?v=8" defer></script>
 <script src="hero3d.js?v=3" defer></script>
 </body>
 </html>
