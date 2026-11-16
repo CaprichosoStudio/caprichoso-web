@@ -74,7 +74,7 @@ tick(); setInterval(tick, 20000);
 
   // solo los elementos que se animan al pasar el ratón
   let last = 0;
-  document.querySelectorAll('.btn, .nav ul a, .svc, .faq summary, .work-card, .rule').forEach((el) => {
+  document.querySelectorAll('.btn, .nav ul a, .svc, .faq summary, .proj, .rule').forEach((el) => {
     el.addEventListener('pointerenter', (e) => {
       if (e.pointerType !== 'mouse') return;
       const now = performance.now(); if (now - last < 40) return; last = now;
