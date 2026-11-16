@@ -137,8 +137,8 @@ svg { display: block; }
 .g4 { --g: radial-gradient(50% 50% at 50% 60%, #ff5a3c 0, transparent 70%), radial-gradient(25% 35% at 15% 20%, #fffbe0 0, transparent 70%), #160606; }
 .g5 { --g: radial-gradient(35% 60% at 60% 50%, #7a0000 0, transparent 70%), radial-gradient(20% 25% at 30% 30%, #fff 0, transparent 70%), radial-gradient(40% 40% at 90% 90%, #c10000 0, transparent 70%), #080808; }
 
-/* CLIENTES: barra roja con logos en blanco deslizándose */
-.clients { background: var(--red); color: var(--cream); overflow: hidden; padding-block: clamp(22px, 2.6vw, 34px); }
+/* CLIENTES: barra negra con logos en blanco deslizándose */
+.clients { background: var(--ink); color: var(--cream); border-block: 1px dashed rgba(127,127,110,.45); overflow: hidden; padding-block: clamp(22px, 2.6vw, 34px); }
 .clients__track { display: flex; width: max-content; animation: clients 34s linear infinite; }
 .clients:hover .clients__track { animation-play-state: paused; }
 .clients__set { display: flex; align-items: center; gap: clamp(56px, 7vw, 110px); padding-right: clamp(56px, 7vw, 110px); }
@@ -146,12 +146,6 @@ svg { display: block; }
 .clients__set .cl-pnlau { height: clamp(28px, 2.8vw, 40px); }
 .clients__set .cl-ku-bcn { height: clamp(36px, 3.6vw, 52px); }
 @keyframes clients { to { transform: translateX(-50%) } }
-
-/* cinta de palabras */
-.ticker { border-block: 1px dashed rgba(127,127,110,.45); overflow: hidden; white-space: nowrap; padding-block: 12px; }
-.ticker .track { display: inline-flex; gap: 48px; animation: tick 38s linear infinite; padding-right: 48px; }
-.ticker .track span { display: inline-flex; gap: 48px; }
-@keyframes tick { to { transform: translateX(-50%) } }
 
 /* MANIFIESTO (día) */
 .manifesto { padding-block: clamp(90px, 12vw, 180px); display: grid; grid-template-columns: minmax(0,1fr) minmax(0,2fr); gap: 48px var(--gutter); }
