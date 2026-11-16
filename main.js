@@ -14,26 +14,30 @@ addEventListener('scroll', syncNav, { passive: true }); syncNav();
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -10% 0px' });
 document.querySelectorAll('.rv').forEach(el => io.observe(el));
 
-// slider de principios 01/03
-const slides = [...document.querySelectorAll('.slide')];
-let i = 0;
-function go(n) {
-  i = (n + slides.length) % slides.length;
-  slides.forEach((s, k) => s.classList.toggle('on', k === i));
-  document.getElementById('bar').style.transform = `translateX(${i * 100}%)`;
-  document.getElementById('count').textContent = `0${i + 1}/0${slides.length}`;
-}
-document.getElementById('prev').onclick = () => go(i - 1);
-document.getElementById('next').onclick = () => go(i + 1);
-setInterval(() => go(i + 1), 6000);
+// slider de principios 01/03 (solo en la home)
+(() => {
+  const slides = [...document.querySelectorAll('.slide')];
+  if (!slides.length) return;
+  let i = 0;
+  function go(n) {
+    i = (n + slides.length) % slides.length;
+    slides.forEach((s, k) => s.classList.toggle('on', k === i));
+    document.getElementById('bar').style.transform = `translateX(${i * 100}%)`;
+    document.getElementById('count').textContent = `0${i + 1}/0${slides.length}`;
+  }
+  document.getElementById('prev').onclick = () => go(i - 1);
+  document.getElementById('next').onclick = () => go(i + 1);
+  setInterval(() => go(i + 1), 6000);
+})();
 
 // reloj de España y estado de la noche
 function tick() {
+  const el = document.getElementById('status'); if (!el) return;
   const now = new Date();
   const hm = new Intl.DateTimeFormat('es-ES', { timeZone: 'Europe/Madrid', hour: '2-digit', minute: '2-digit', hour12: false }).format(now);
   const h = +hm.slice(0, 2);
   const open = h >= 23 || h < 6;
-  document.getElementById('status').textContent = open ? `Son las ${hm}. Estamos de noche.` : `Son las ${hm}. Quedan ${23 - h} h para abrir puertas.`;
+  el.textContent = open ? `Son las ${hm}. Estamos de noche.` : `Son las ${hm}. Quedan ${23 - h} h para abrir puertas.`;
 }
 tick(); setInterval(tick, 20000);
 
@@ -70,7 +74,7 @@ tick(); setInterval(tick, 20000);
 
   // solo los elementos que se animan al pasar el ratón
   let last = 0;
-  document.querySelectorAll('.btn, .nav ul a, .svc, .faq summary').forEach((el) => {
+  document.querySelectorAll('.btn, .nav ul a, .svc, .faq summary, .work-card, .rule').forEach((el) => {
     el.addEventListener('pointerenter', (e) => {
       if (e.pointerType !== 'mouse') return;
       const now = performance.now(); if (now - last < 40) return; last = now;

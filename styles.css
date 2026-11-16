@@ -270,6 +270,65 @@ svg { display: block; }
 .book__alt { padding: 14px 24px; border-top: 1px dashed rgba(255,255,233,.22); opacity: .7; text-transform: none; }
 @media (max-width: 860px) { .book { width: 100%; height: 100dvh; margin: 0; border-radius: 0; } }
 
+/* TRABAJOS (noche): un caso destacado que abre su propia página */
+.work { padding-block: clamp(90px, 10vw, 150px); }
+.work .sec-head .mono { color: var(--cream); }
+.work-card { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 32px var(--gutter); padding-top: 32px; border-top: 1px dashed rgba(255,255,233,.22); }
+.work-card__media { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.work-card__media figure { overflow: hidden; }
+.work-card__media img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; background: #0d0d0d; transition: transform .8s var(--ease); }
+.work-card__media figcaption { margin-top: 10px; opacity: .6; }
+.work-card:hover .work-card__media img { transform: scale(1.03); }
+.work-card:hover .work-card__media figure + figure img { transform: scale(1.03) rotate(-1deg); }
+.work-card__txt { display: flex; flex-direction: column; align-items: flex-start; }
+.work-card__txt > .mono { margin-top: 18px; }
+.work-card .statement { margin-top: 14px; }
+.work-card .desc { margin-top: 18px; font-weight: 500; font-size: 18px; line-height: 1.3; opacity: .62; max-width: 34ch; }
+.work-card .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 22px; }
+.work-card .tags li { border: 1px solid rgba(255,255,233,.35); padding: 3px 7px; border-radius: 3px; }
+.work-card .btn { margin-top: auto; }
+.work-card__txt .btn { margin-top: 32px; }
+.work-card:hover .btn .sq { transform: rotate(45deg); }
+@media (max-width: 860px) { .work-card { grid-template-columns: 1fr; padding-top: 24px; } .work { padding-block: 80px; } .work-card__media { gap: 8px; } }
+
+/* PÁGINA DE CASO */
+.cs-hero { padding-top: clamp(130px, 14vw, 200px); padding-bottom: clamp(48px, 6vw, 80px); }
+.cs-hero .back { display: inline-block; margin-bottom: clamp(36px, 5vw, 64px); opacity: .6; transition: opacity .25s, transform .35s var(--ease); }
+.cs-hero .back:hover { opacity: 1; transform: translateX(-4px); }
+.cs-hero .display { margin-top: 18px; }
+.cs-meta { margin: clamp(40px, 5vw, 72px) 0 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px var(--gutter); }
+.cs-meta > div { border-top: 1px dashed rgba(255,255,233,.22); padding-top: 14px; }
+.cs-meta dt { opacity: .5; }
+.cs-meta dd { margin: 8px 0 0; font-weight: 600; font-size: 18px; line-height: 1.25; letter-spacing: -0.01em; }
+.cs-blue { --tb: #0032FF; background: var(--tb); color: var(--cream); }
+.cs figure img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
+.cs figcaption { margin-top: 12px; }
+.cs-pair { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gutter); padding-block: clamp(40px, 5vw, 72px); }
+.cs-before { padding-block: clamp(90px, 10vw, 150px); display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 40px var(--gutter); align-items: start; }
+.cs-before .statement { margin-top: 18px; }
+.cs-before .body { margin-top: 26px; max-width: 40ch; opacity: .75; }
+.cs-before figcaption { opacity: .6; }
+.cs-rules { padding-bottom: clamp(90px, 10vw, 150px); }
+.rule { border-top: 1px dashed rgba(34,34,34,.35); display: grid; grid-template-columns: 90px minmax(0, 1.4fr) minmax(0, 1fr); gap: 12px var(--gutter); padding-block: 22px; align-items: start; }
+.rule:last-child { border-bottom: 1px dashed rgba(34,34,34,.35); }
+.rule .name { font-weight: 800; letter-spacing: -0.055em; line-height: .9; font-size: clamp(52px, 8vw, 140px); transition: transform .5s var(--ease), color .3s; }
+.rule:hover .name { transform: translateX(14px); color: #0032FF; }
+.rule p { padding-top: 10px; font-weight: 600; font-size: 19px; line-height: 1.25; letter-spacing: -0.015em; max-width: 32ch; }
+.cs-system { padding-block: clamp(100px, 12vw, 180px); }
+.cs-system .shout { margin-top: 24px; }
+.cs-system .body { margin-top: 32px; max-width: 36ch; }
+.cs-q { max-width: 18ch; }
+.cs-note { margin-top: 56px; text-transform: none; letter-spacing: 0; max-width: 70ch; }
+@media (max-width: 860px) {
+  .cs-meta { grid-template-columns: 1fr 1fr; }
+  .cs-pair { grid-template-columns: 1fr; gap: 32px; }
+  .cs-before { grid-template-columns: 1fr; padding-block: 80px; }
+  .rule { grid-template-columns: 1fr; gap: 6px; padding-block: 22px; }
+  .rule p { padding-top: 4px; }
+  .cs-system { padding-block: 96px; }
+  .cs-system .shout { font-size: clamp(44px, 14vw, 96px); }
+}
+
 /* aparición al hacer scroll */
 .rv { opacity: 0; transform: translateY(26px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
 .rv.in { opacity: 1; transform: none; }
